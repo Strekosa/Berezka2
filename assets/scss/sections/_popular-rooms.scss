@@ -1,0 +1,113 @@
+
+.popular-rooms {
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin-top: 40px;
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+    }
+    @media screen and (max-width: 768px) {
+      grid-gap: 20px;
+    }
+    @media screen and (max-width: 576px) {
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center;
+      grid-gap: 20px;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    max-width:100%;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 5.9px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+
+    @media screen and (max-width: 576px) {
+    max-width: 350px;
+    }
+
+    &-img {
+
+      overflow: hidden;
+      @include adaptiv-height(200,140);
+      @media screen and (max-width: 1024px) {
+        @include adaptiv-height(600,113);
+      }
+      @media screen and (max-width: 576px) {
+        @include adaptiv-height(320,236);
+      }
+    }
+
+    &-title {
+      padding: 19px 17px;
+      border-bottom: 1px solid #DDDDDD;
+      font-size: 12px;
+      color: #b5b5b5;
+
+      span {
+        color: $text-color;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+      }
+      h6{
+        margin-top: 15px;
+      }
+    }
+
+    &-info {
+      padding: 14px 16px 25px;
+      min-height: 210px;
+      display: flex;
+      justify-content: space-between;
+      flex:1 1 auto;
+      @media screen and (max-width: 1024px) {
+        min-height: 200px;
+      }
+    }
+
+    &-facilities {
+      li {
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.02em;
+        @include adaptiv-font(12.3,10);
+        line-height: 23px;
+        font-weight: 500;
+        color: #555555;
+        &:not(last-child) {
+          margin-right: 12px;
+        }
+
+        &::before {
+          content: '';
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: $main-color;
+          display: flex;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    &-price {
+      font-size: 18px;
+      line-height: 20px;
+      color: #27A733;
+      margin-bottom: 10px;
+
+    }
+  }
+
+}
+
+
+
+
+

@@ -1,0 +1,272 @@
+
+header {
+  //position: absolute;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: transparent;
+
+
+  .site-branding {
+    z-index: 10;
+    width: 162px;
+    height: 46px;
+    margin-right: 15px;
+  }
+
+  .header-main {
+
+    padding: 8px 0px 8px;
+  }
+
+  .header-menu {
+    position: relative;
+    z-index: 2;
+  }
+
+}
+
+
+.menu {
+
+  li {
+
+    > a {
+      background: transparent; /* menu item background color */
+      color: $text-color; /* menu item text color */
+      text-transform: uppercase;
+      @include adaptiv-font(14, 10);
+      font-weight: 500;
+      line-height: 69px;
+      letter-spacing: -0.02em;
+      position: relative;
+
+      &:after {
+        content: '';
+        height: 3px;
+        width: 100%;
+        background-color: transparent;
+        position: absolute;
+        display: block;
+        margin-top: 5px;
+        transition: .3s linear;
+      }
+
+      &:focus {
+        a:after {
+          background-color: $main-color;
+        }
+      }
+    }
+    &:hover {
+      a:after {
+        background-color: $main-color;
+      }
+    }
+     &:active {
+      a:after {
+        background-color: $main-color;
+      }
+    }
+    &.current-menu-item, &.current_page_ancestor, &.current_page_parent {
+      > a, .submenu-toggle {
+        /* menu item text color */
+
+      }
+    }
+
+    &[aria-expanded='true'] {
+      > a, .submenu-toggle {
+        color: $text-color; /* menu item text color */
+
+      }
+    }
+
+
+  }
+
+  li:not(:last-child) {
+
+    @include adaptiv-margin-right(45, 10);
+  }
+
+}
+
+.header-contact {
+  a {
+    font-size: 18px;
+    @include adaptiv-font(18, 14);
+    color: #545454;
+  }
+
+  &-link {
+    color: $main-color;
+    text-decoration: underline;
+    cursor: pointer;
+    &.open{
+      .header-contact-form{
+        display: block;
+      }
+    }
+  }
+
+  &-form {
+    display: none;
+    top: 100%;
+    right: 0;
+    z-index: 10;
+    background: $sub-color;
+    width: 250px;
+    border: 2px solid $main-color;
+    input[type="submit"]{
+      background: transparent;
+      color: $main-color !important;
+      padding: 10px 30px;
+      border-radius: 0;
+      border:none ;
+      &:hover, &:focus, {
+        /*basic hover and focus effects*/
+        color:$sub-color!important;;
+        background-color: $main-color;
+        cursor: pointer;
+        border:none ;
+      }
+    }
+    input {
+      width: 100%;
+      border-radius: 0 ;
+    }
+
+    label {
+      br {
+        display: none;
+      }
+    }
+
+    .wpcf7-spinner,{
+      display: none;
+    }
+    @media (max-width: 768px) {
+     left:0;
+      margin-top: 15px;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  body.lock {
+    overflow: hidden;
+  }
+  header {
+    .site-branding {
+      width: 102px;
+      height: 29px;
+    }
+
+    .header-main {
+      padding: 15px 0px 15px;
+    }
+
+    .nav-tgl {
+      display: block;
+      position: relative;
+      width: 24px;
+      height: 18px;
+      z-index: 3;
+      background-color: transparent;
+      border: none;
+
+      span {
+        position: absolute;
+        background-color: $main-color;
+        left: 0;
+        width: 24px;
+        height: 2px;
+        top: 8px;
+        transition: all 0.3s ease 0s;
+      }
+    }
+
+    .nav-tgl:before,
+    .nav-tgl:after {
+      content: '';
+      background-color: $main-color;
+      position: absolute;
+      height: 2px;
+      left: 0;
+      transition: all 0.3s ease 0s;
+    }
+
+    .nav-tgl:before {
+      top: 0;
+      width: 24px;
+    }
+
+    .nav-tgl:after {
+      bottom: 0;
+      width: 24px;
+    }
+
+    .nav-tgl.active span {
+      transform: scale(0);
+    }
+
+    .nav-tgl.active:before {
+      transform: rotate(45deg);
+      top: 7px;
+    }
+
+    .nav-tgl.active:after {
+      transform: rotate(-45deg);
+      bottom: 9px;
+      width: 24px;
+    }
+
+    .header-menu {
+      position: fixed;
+      top: 0;
+      display: none;
+      opacity: 0;
+      left: 0;
+      width: 100%;
+      transition: all 0.3s ease 0s;
+      background: #F6F8FD;
+      padding: 90px 5% 20px;
+
+      .menu {
+        flex-direction: column;
+        margin-bottom: 50px;
+        margin-top: 20px;
+
+        .menu-item {
+
+          font-size: 16px;
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          a {
+            width: 100%;
+            font-weight: 600;
+            font-size: 14px;
+          }
+
+        }
+      }
+    }
+
+    .header-menu.active {
+      display: flex;
+      flex-direction: column;
+      opacity: 1;
+      height: 100%;
+    }
+
+  }
+
+}
+
+

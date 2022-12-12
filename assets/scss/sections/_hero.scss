@@ -1,0 +1,102 @@
+.hero {
+  &__main {
+
+  }
+
+  &__image {
+
+    width: 100%;
+    @include adaptiv-height(487, 360);
+    overflow: hidden;
+
+  }
+
+  &__text {
+    max-width: 485px;
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__title {
+    @include adaptiv-margin-bottom(40, 10);
+  }
+
+  &__subtitle {
+    color: $sub-color;
+    font-weight: 500;
+
+  }
+
+  form {
+    background: $sub-color;
+    width: 300px;
+    padding: 20px 30px 18px;
+
+    @media screen and (max-width: 768px) {
+      padding: 10px 20px 10px;
+    }
+
+    .wpcf7-spinner {
+      display: none;
+    }
+    .wpcf7-response-output{
+      margin: 15px 0 0 0;
+    }
+    label {
+      br {
+        display: none;
+      }
+    }
+
+    input {
+      width: 100%;
+      border-radius: 0;
+    }
+
+    input:not(.wpcf7-submit), textarea {
+
+      padding: 12px;
+      @media screen and (max-width: 768px) {
+        padding: 7px;
+      }
+
+      &::placeholder {
+        color: #747474;
+        @include adaptiv-font(14, 12);
+      }
+    }
+
+    textarea {
+      max-height: 87px;
+      min-height: 100%;
+      resize: none;
+      border-radius: 0;
+      padding: 15px 64px 15px 12px;
+      @include adaptiv-margin-bottom(12, 7);
+      @media screen and (max-width: 768px) {
+        padding: 7px ;
+        max-height: 40px;
+      }
+    }
+
+    h6 {
+      font-weight: 500;
+      text-align: center;
+      color: #111111;
+      @include adaptiv-font(16, 13);
+      @include adaptiv-margin-bottom(12, 7);
+    }
+
+    .button {
+      width: 100%;
+      @include adaptiv-margin-top(15, 7);
+      @media screen and (max-width: 768px) {
+        padding: 7px ;
+
+      }
+    }
+  }
+}
+

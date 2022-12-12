@@ -1,0 +1,126 @@
+/* ---------------------------------------
+	Typography
+--------------------------------------- */
+
+body {
+  color: $text-color;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $text-subcolor;
+  font-family: 'Montserrat', sans-serif;
+  clear: both;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  transition: .2s all linear;
+  letter-spacing: -0.02em;
+}
+
+
+h1, .h1 {
+  /*basic heading styles*/
+  @include adaptiv-font(40, 20);
+  @include adaptiv-line-height(45, 25);
+  font-weight: 700;
+  color: $sub-color;
+}
+
+h2, .h2 {
+  /*basic heading styles*/
+  @include adaptiv-font(25, 20);
+  font-weight: 700;
+}
+
+h3, .h3 {
+  /*basic heading styles*/
+  @include adaptiv-font(24, 17);
+  font-weight: 600;
+}
+
+h4, .h4 {
+  /*basic heading styles*/
+
+}
+
+h5, .h5 {
+  /*basic heading styles*/
+  font-size: 16px;
+  font-weight: 500;
+}
+
+h6, .h6 {
+  /*basic heading styles*/
+  font-size: 14px;
+  font-weight: 500;
+}
+
+p {
+  /*basic paragraph styles*/
+  margin-bottom: 0;
+}
+
+ul {
+  /*basic list styles*/
+  font-size: inherit;
+
+  li {
+    /*basic list-item styles*/
+
+  }
+}
+
+
+a {
+  color: $text-color;
+  text-decoration: none;
+  transition: color .3s linear;
+
+  &:hover, &:focus, &:visited{
+    /*basic hover and focus effects*/
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+
+/* Button additional styles */
+button {
+
+  transition: .2s linear all;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.button, input[type="submit"] {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  padding: 10px 35px;
+  background: #E7A300;
+  width: max-content;
+  transition: .2s linear all;
+  color: $sub-color!important;
+  border: 3px solid transparent;
+
+  &:hover, &:focus, {
+    /*basic hover and focus effects*/
+    color:#E7A300!important;
+    border: 3px solid #E7A300;
+    background-color: $sub-color;
+    cursor: pointer;
+  }
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}

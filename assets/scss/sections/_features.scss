@@ -1,0 +1,52 @@
+.features {
+  background: #F6F8FD;
+
+  &__title {
+    color: #363636;
+  }
+
+  &__main {
+
+    padding: 80px 0 36px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+
+    @include adaptiv-margin-top(57, 30);
+    @include adaptiv-margin-bottom(65, 30);
+
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+
+    }
+    @media screen and (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+
+    }
+  }
+
+  &__item {
+    &-icon {
+      color: $main-color;
+      border: 3px solid $main-color;
+      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+      margin-bottom: 23px;
+      font-weight: 700;
+    }
+
+    &-text {
+      font-weight: 500;
+    }
+
+  }
+
+  &__text {
+    font-size: 16px;
+  }
+}
+
